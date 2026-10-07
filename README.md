@@ -151,8 +151,6 @@ As tecnologias previstas para o desenvolvimento são:
 | Segurança          | SAST e DAST      | Análises de segurança previstas para a Fase 2   |
 | Comunicação segura | HTTPS            | Proteção da comunicação na publicação da Fase 2 |
 
-As versões específicas das tecnologias deverão ser registradas conforme o ambiente de desenvolvimento e os arquivos de dependências do projeto.
-
 ---
 
 ## 5. Arquitetura
@@ -223,7 +221,6 @@ estante/
 │   ├── README.md
 │   ├── visao-do-projeto.md
 │   ├── arquitetura/
-│   ├── modelagem/
 │   ├── diagramas/
 │   ├── api/
 │   └── seguranca/
@@ -269,7 +266,6 @@ O projeto será desenvolvido colaborativamente.
 
 **Professor(a) responsável:** Felippe Pires
 
-Todos os integrantes deverão possuir acesso ao repositório como colaboradores, contribuindo por meio de branches, commits e revisões das alterações.
 
 ---
 
@@ -406,10 +402,10 @@ O uso de ferramentas de inteligência artificial no projeto deverá respeitar as
 
 ### Declaração de uso
 
-* **Houve uso de inteligência artificial?** [Preencher conforme o uso real].
-* **Ferramentas utilizadas:** [Informar as ferramentas utilizadas ou declarar que nenhuma foi utilizada].
-* **Finalidade:** [Descrever as atividades em que houve auxílio].
-* **Atividades realizadas pelos integrantes:** [Descrever o trabalho efetivamente realizado pelo grupo].
+* **Houve uso de inteligência artificial?** Sim, para fazer a conferencia dos itens necessários para o projeto.
+* **Ferramentas utilizadas:** claude.
+* **Finalidade:** Conferência de requisitos solicitados pelo professor e eventuais correções.
+* **Atividades realizadas pelos integrantes:** documentação.
 * **Validação:** os integrantes deverão revisar e validar os materiais e o código antes de incorporá-los ao projeto.
 
 A imagem da política de uso de IA indicada pelo template oficial poderá ser incluída em `images/`, conforme as orientações da disciplina.
