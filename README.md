@@ -1,4 +1,4 @@
-# 📚 Estante
+# Estante
 
 > **Aplicação Web para Organização e Acompanhamento de Leituras**
 
@@ -259,15 +259,15 @@ estante/
 
 ## 7. Participantes
 
-O projeto será desenvolvido colaborativamente. Os nomes, as responsabilidades e as matrículas devem ser preenchidos pelos integrantes.
+O projeto será desenvolvido colaborativamente.
 
-| Nome                   | Matrícula   | Responsabilidade              |
-| ---------------------- | ----------- | ----------------------------- |
-| [Isabella Silva e Sena] | [Matrícula] | [Responsabilidade no projeto] |
-| [Luísa Castro Souza] | [Matrícula] | [Responsabilidade no projeto] |
-| [Maria Eduarda Almeida Campelo] | [Matrícula] | [Responsabilidade no projeto] |
+| Nome                   |
+| ---------------------- | 
+| [Isabella Silva e Sena] | 
+| [Luísa Castro Souza] | 
+| [Maria Eduarda Almeida Campelo] | 
 
-**Professor(a) responsável:** [Felippe Pires]
+**Professor(a) responsável:** Felippe Pires
 
 Todos os integrantes deverão possuir acesso ao repositório como colaboradores, contribuindo por meio de branches, commits e revisões das alterações.
 
@@ -290,11 +290,10 @@ As instruções abaixo representam um procedimento inicial para um projeto Djang
 **1. Clonar o repositório**
 
 ```bash
-git clone URL_DO_REPOSITORIO
-cd NOME_DO_REPOSITORIO
+git clone https://github.com/lucstr-souza/ProjetoDesenvolvimentoWeb.git
+cd ProjetoDesenvolvimentoWeb
 ```
 
-Substitua `URL_DO_REPOSITORIO` e `NOME_DO_REPOSITORIO` pelos dados reais do repositório criado a partir do template oficial.
 
 **2. Criar um ambiente virtual**
 
@@ -464,7 +463,7 @@ test: adiciona testes de gerenciamento de livros
 7. Corrigir eventuais problemas identificados.
 8. Integrar as alterações após a revisão.
 
-**Repositório do projeto:** [Inserir link do GitHub].
+**Repositório do projeto:** https://github.com/lucstr-souza/ProjetoDesenvolvimentoWeb.git
 
 ---
 
@@ -536,13 +535,6 @@ Os links deverão ser ajustados para corresponder aos nomes e caminhos definitiv
 * **Open Library:** https://openlibrary.org/developers/api
 * **GitHub Docs:** https://docs.github.com/
 
-### Contato
-
-**Repositório:** [Inserir link do repositório do Estante].
-
-**Contato do grupo:** [Inserir e-mail institucional ou canal de contato].
-
-**Agradecimentos:** aos docentes e materiais acadêmicos que orientam o desenvolvimento do projeto.
 
 ---
 
