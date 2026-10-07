@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estante — Protótipo navegável (Fase 1)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--verde:#1F4D3F;--verde2:#2E6B58;--papel:#FAF5EA;--card:#fff;--tinta:#1E2A28;--muda:#6B7770;--marc:#C8553D;--ouro:#D9A441;--linha:#E6DFCE;--r:14px}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 Inter,Arial,sans-serif;background:var(--papel);color:var(--tinta)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;color:var(--verde);margin:0 0 .5rem}
+a{color:inherit}.screen{display:none}.screen:target{display:block}
+.proto{background:var(--tinta);color:#fff;font-size:12px;padding:6px 16px;text-align:center}
+nav.top{background:var(--verde);color:var(--papel);display:flex;gap:6px;align-items:center;padding:10px 20px;flex-wrap:wrap}
+nav.top .brand{font:700 22px Fraunces,Georgia,serif;margin-right:auto;text-decoration:none;display:flex;align-items:center;gap:8px}
+nav.top a.l{padding:6px 12px;border-radius:99px;text-decoration:none;font-size:14px}
+nav.top a.l.on,nav.top a.l:hover{background:var(--papel);color:var(--verde)}
+main{max-width:1080px;margin:0 auto;padding:24px 20px 60px}
+.grid{display:grid;gap:16px}.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gb{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+.card{background:var(--card);border:1px solid var(--linha);border-radius:var(--r);padding:18px}
+.kpi b{display:block;font:700 34px Fraunces,Georgia,serif;color:var(--verde)}.kpi span{color:var(--muda);font-size:14px}
+.btn{display:inline-block;border:0;border-radius:10px;padding:10px 16px;font:600 14px Inter,sans-serif;background:var(--marc);color:#fff;cursor:pointer;text-decoration:none}
+.btn.sec{background:transparent;color:var(--verde);border:1.5px solid var(--verde)}
+label{display:block;font-size:13px;font-weight:600;margin:10px 0 4px}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--linha);border-radius:10px;font:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid var(--ouro)}
+.bar{height:10px;background:var(--linha);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--verde2),var(--ouro))}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 10px;border-radius:99px;background:#E4EEE9;color:var(--verde)}
+.tag.lendo{background:#FBEBC8;color:#7A5A10}.tag.quero{background:#E9E6F4;color:#4B3F8F}.tag.aband{background:#F6DDD7;color:#9A3320}
+.cover{aspect-ratio:2/3;border-radius:8px 12px 12px 8px;display:flex;align-items:flex-end;padding:10px;color:#fff;font:700 15px/1.2 Fraunces,Georgia,serif;box-shadow:inset 6px 0 0 rgba(0,0,0,.18)}
+.book a{text-decoration:none}.book small{color:var(--muda)}
+.filters{display:grid;gap:10px;grid-template-columns:2fr repeat(3,1fr) auto;align-items:end;margin-bottom:18px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--linha)}th{color:var(--muda);font-weight:600}
+.res{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--linha)}.res .cover{width:44px;font-size:0;padding:0;flex:none}
+.alert{background:#FFF4D6;border-left:4px solid var(--ouro);padding:10px 14px;border-radius:8px;font-size:14px}
+.login{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}.login .hero{background:var(--verde);color:var(--papel);padding:48px;display:flex;flex-direction:column;justify-content:center}
+.login .hero h1{color:var(--papel);font-size:44px}.login .form{display:flex;align-items:center;justify-content:center;padding:32px}.login .form>div{width:100%;max-width:360px}
+.note{font-size:12px;color:var(--muda);margin-top:6px}
+@media(max-width:760px){.login{grid-template-columns:1fr}.login .hero{padding:28px}.filters{grid-template-columns:1fr 1fr}}
+@media print{.proto,nav.top,.noprint{display:none!important}body{background:#fff}.card{border:1px solid #bbb}}
+</style>
+</head>
+<body>
+<div class="proto">PROTÓTIPO DE BAIXA/MÉDIA FIDELIDADE · Dados fictícios · Estante — Fase 1 · Desenvolvimento Web (Ciência da Computação)</div>
+
+<!-- T01 LOGIN / CADASTRO -->
+<section class="screen" id="login"><div class="login">
+ <div class="hero"><svg width="64" height="64" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" rx="20" fill="#FAF5EA"/><rect x="24" y="24" width="12" height="52" rx="2" fill="#1F4D3F"/><rect x="40" y="18" width="12" height="58" rx="2" fill="#C8553D"/><rect x="56" y="28" width="12" height="48" rx="2" fill="#D9A441"/><rect x="71" y="30" width="12" height="46" rx="2" fill="#1F4D3F" transform="rotate(12 77 76)"/></svg>
+ <h1>Estante</h1><p style="font-size:18px;max-width:380px">Organize sua biblioteca pessoal, registre suas leituras e acompanhe sua meta anual em um só lugar.</p></div>
+ <div class="form"><div><h2>Entrar</h2>
+  <label for="e">E-mail</label><input id="e" type="email" placeholder="voce@email.com">
+  <label for="s">Senha</label><input id="s" type="password" placeholder="••••••••">
+  <p class="note">Erro de validação (exemplo): “E-mail ou senha inválidos.”</p>
+  <p><a class="btn" href="#painel">Entrar</a> <a class="btn sec" href="#login">Criar conta</a></p></div></div>
+</div></section>
+
+<!-- T02 PAINEL -->
+<section class="screen app" id="painel"><main>
+ <h1>Olá, leitora! 👋</h1>
+ <div class="grid g2" style="margin-bottom:16px">
+  <div class="card"><h3>Meta de 2026</h3><p style="font-size:30px;margin:0"><b>14</b> de 24 livros</p><div class="bar"><i style="width:58%"></i></div><p class="note">58% concluído · faltam 10 livros</p></div>
+  <div class="card"><h3>Lendo agora</h3><p style="margin:0"><b>1984</b> — George Orwell</p><div class="bar" style="margin:8px 0"><i style="width:42%"></i></div><p class="note">Página 133 de 328 (42%)</p><a class="btn sec" href="#detalhe">Registrar sessão</a></div>
+ </div>
+ <div class="grid g4" id="kp"></div>
+</main></section>
+
+<!-- T03 BIBLIOTECA -->
+<section class="screen app" id="biblioteca"><main>
+ <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><h1>Minha biblioteca</h1><a class="btn" href="#adicionar">+ Adicionar livro</a></div>
+ <form class="filters card" onsubmit="return false"><div><label>Buscar por título ou autor</label><input placeholder="Ex.: Machado de Assis"></div>
+  <div><label>Status</label><select><option>Todos</option><option>Quero ler</option><option>Lendo</option><option>Lido</option><option>Abandonado</option></select></div>
+  <div><label>Gênero</label><select><option>Todos</option><option>Romance</option><option>Ficção científica</option></select></div>
+  <div><label>Nota mínima</label><select><option>Qualquer</option><option>★ 3+</option><option>★ 4+</option></select></div>
+  <button class="btn">Filtrar</button></form>
+ <div class="grid gb" id="shelf"></div>
+</main></section>
+
+<!-- T04 ADICIONAR (OPEN LIBRARY) -->
+<section class="screen app" id="adicionar"><main>
+ <h1>Adicionar livro</h1>
+ <div class="grid g2">
+  <div class="card"><h3>1. Buscar na Open Library</h3><label>Título, autor ou ISBN</label><input value="Dom Casmurro"><p><button class="btn" style="margin-top:10px">Pesquisar</button></p>
+   <div class="res"><div class="cover" style="background:#1F4D3F"></div><div style="flex:1"><b>Dom Casmurro</b><br><small>Machado de Assis · 1899</small></div><a class="btn sec" href="#adicionar">Importar</a></div>
+   <div class="res"><div class="cover" style="background:#C8553D"></div><div style="flex:1"><b>Dom Casmurro (ed. ilustrada)</b><br><small>Machado de Assis · 2012</small></div><a class="btn sec" href="#adicionar">Importar</a></div>
+   <div class="alert" style="margin-top:12px"><b>Open Library indisponível?</b> Exibiremos: “Não foi possível consultar o serviço. Preencha manualmente.”</div></div>
+  <div class="card"><h3>2. Revisar e salvar</h3><p class="note">Campos importados podem ser editados antes de salvar.</p>
+   <label>Título *</label><input value="Dom Casmurro"><label>Autor *</label><input value="Machado de Assis">
+   <div class="grid" style="grid-template-columns:1fr 1fr"><div><label>Ano</label><input value="1899"></div><div><label>Páginas</label><input value="256"></div></div>
+   <div class="grid" style="grid-template-columns:1fr 1fr"><div><label>Gênero</label><input value="Romance"></div><div><label>Status</label><select><option>Quero ler</option></select></div></div>
+   <p><a class="btn" href="#biblioteca">Salvar na biblioteca</a> <a class="btn sec" href="#biblioteca">Cancelar</a></p></div>
+ </div>
+</main></section>
+
+<!-- T05 DETALHE -->
+<section class="screen app" id="detalhe"><main>
+ <div class="grid" style="grid-template-columns:minmax(150px,200px) 1fr;align-items:start">
+  <div class="cover" style="background:#2E6B58;font-size:20px">1984</div>
+  <div><span class="tag lendo">Lendo</span><h1>1984</h1><p>George Orwell · 1949 · Ficção científica · 328 páginas</p>
+   <div class="bar"><i style="width:42%"></i></div><p class="note">133 de 328 páginas (42%)</p>
+   <div class="grid g2"><div><label>Status</label><select><option>Lendo</option><option>Lido</option><option>Abandonado</option></select></div><div><label>Nota</label><select><option>★★★★☆ (4)</option></select></div></div>
+   <p><a class="btn sec" href="#adicionar">Editar</a> <a class="btn sec" style="color:var(--marc);border-color:var(--marc)" href="#biblioteca">Excluir</a></p></div></div>
+ <div class="grid g2" style="margin-top:20px">
+  <div class="card"><h3>Nova sessão de leitura</h3><label>Data</label><input type="date" value="2026-10-07"><label>Páginas lidas *</label><input type="number" value="25"><label>Tempo (min, opcional)</label><input type="number" value="40"><p><button class="btn" style="margin-top:10px">Registrar</button></p></div>
+  <div class="card"><h3>Histórico de sessões</h3><table><tr><th>Data</th><th>Páginas</th><th>Tempo</th></tr><tr><td>07/10</td><td>25</td><td>40 min</td></tr><tr><td>05/10</td><td>38</td><td>55 min</td></tr><tr><td>02/10</td><td>70</td><td>—</td></tr></table></div></div>
+</main></section>
+
+<!-- T06 RELATÓRIO -->
+<section class="screen app" id="relatorio"><main>
+ <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px"><h1>Relatório de leituras</h1><div class="noprint"><a class="btn sec" href="#relatorio">⬇ Exportar CSV</a> <button class="btn" onclick="print()">🖨 Imprimir</button></div></div>
+ <form class="filters card noprint" style="grid-template-columns:repeat(3,1fr) auto" onsubmit="return false"><div><label>Ano</label><select><option>2026</option></select></div><div><label>Status</label><select><option>Todos</option></select></div><div><label>Gênero</label><select><option>Todos</option></select></div><button class="btn">Aplicar</button></form>
+ <div class="grid g4" id="kr" style="margin-bottom:16px"></div>
+ <div class="card"><h3>Livros do período</h3><table><tr><th>Título</th><th>Autor</th><th>Status</th><th>Nota</th><th>Pág. lidas</th></tr>
+ <tr><td>Dom Casmurro</td><td>Machado de Assis</td><td>Lido</td><td>5</td><td>256</td></tr><tr><td>1984</td><td>George Orwell</td><td>Lendo</td><td>4</td><td>133</td></tr><tr><td>Capitães da Areia</td><td>Jorge Amado</td><td>Lido</td><td>4</td><td>280</td></tr><tr><td>Sapiens</td><td>Yuval N. Harari</td><td>Abandonado</td><td>2</td><td>90</td></tr></table></div>
+</main></section>
+
+<script>
+const cores=['#1F4D3F','#C8553D','#2E6B58','#8A5A2B','#4B3F8F','#B5832A'];
+const livros=[['Dom Casmurro','Machado de Assis','Lido','tag','Lido'],['1984','George Orwell','Lendo','tag lendo','Lendo'],['Capitães da Areia','Jorge Amado','Lido','tag','Lido'],['O Hobbit','J. R. R. Tolkien','Quero ler','tag quero','Quero ler'],['Sapiens','Yuval N. Harari','Abandonado','tag aband','Abandonado'],['A Hora da Estrela','Clarice Lispector','Quero ler','tag quero','Quero ler']];
+document.getElementById('shelf').innerHTML=livros.map((l,i)=>`<div class="book"><a href="#detalhe"><div class="cover" style="background:${cores[i]}">${l[0]}</div><p style="margin:8px 0 0"><b>${l[0]}</b><br><small>${l[1]}</small><br><span class="${l[3]}">${l[4]}</span></p></a></div>`).join('');
+const kp=[['32','Livros na biblioteca'],['14','Livros lidos'],['3','Em andamento'],['2','Abandonados'],['4,2','Média das notas'],['5.870','Páginas lidas'],['96','Sessões registradas'],['58%','Progresso da meta']];
+const kh=(a)=>a.map(k=>`<div class="card kpi"><b>${k[0]}</b><span>${k[1]}</span></div>`).join('');
+document.getElementById('kp').innerHTML=kh(kp.slice(0,4));document.getElementById('kr').innerHTML=kh(kp);
+document.querySelectorAll('.app').forEach(s=>{const n=[['painel','Painel'],['biblioteca','Biblioteca'],['adicionar','Adicionar'],['relatorio','Relatório']];
+ s.insertAdjacentHTML('afterbegin',`<nav class="top"><a class="brand" href="#painel">📚 Estante</a>${n.map(x=>`<a class="l ${x[0]==s.id||(s.id=='detalhe'&&x[0]=='biblioteca')?'on':''}" href="#${x[0]}">${x[1]}</a>`).join('')}<a class="l" href="#login">Sair</a></nav>`)});
+if(!location.hash)location.hash='#login';
+</script>
+</body>
+</html>
